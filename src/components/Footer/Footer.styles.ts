@@ -1,10 +1,10 @@
+import { Link } from '@components/LinkStyle/LinkStyle.styles'
 import styled from 'styled-components'
 
 export const Footers = styled('div')`
     margin-top: 265px;
     display: flex;
     justify-content: space-between;
-    padding: 0 24px;
     align-items: flex-end;
     @media screen and (max-width: 600px) {
         margin-top: 32px;
@@ -15,4 +15,8 @@ export const Footers = styled('div')`
         padding: 0;
   }
 ;
+`
+
+export const LinkReviews = styled(Link)`
+   padding: 0 15px;
 `

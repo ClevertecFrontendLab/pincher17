@@ -1,7 +1,7 @@
 import React from 'react';
 import { Footers } from './Footer.styles';
-import { LinkStyle } from '@components/LinkStyle';
 import { CardDownload } from '@components/CardDownload';
+import { LinkStyle } from '@components/LinkStyle';
 
 export const Footer: React.FC = () => {
     return (
