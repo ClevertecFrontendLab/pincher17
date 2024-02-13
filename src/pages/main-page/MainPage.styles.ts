@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import background from '../../assets/img/MainPageLight.png'
 import { TextStyleProps } from './TextStyle.types';
+import { Card } from 'antd';
 
 
 export const Main = styled('main')`
@@ -18,6 +19,7 @@ export const Text = styled.p<TextStyleProps>`
     line-height: ${(props) => (props.lineheight ? props.lineheight : 'normal')};
     margin-bottom: 0;
     max-width:${(props) => (props.maxWidth ? props.maxWidth  : '100%')} ;
+    font-family: "Inter";
 `
 export const CardButtonWrapper = styled('div')`
     max-width: 752px;
@@ -28,4 +30,12 @@ export const CardButtonWrapper = styled('div')`
         flex-direction: column;
         height: 395px;
   }
+`
+
+export const CardStyle = styled(Card)`
+    min-height: 101px;
+    & .ant-card-body{
+        padding: 12px;
+        height: 56px;
+    }
 `

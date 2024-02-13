@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
         <HeaderStyle
             className='site-layout-background'
             style={{
-                padding: `16px 24px 16px 24px`,
+                padding: `0px 24px 22px 24px`,
                 height: 'auto',
                 background: `rgba(240, 245, 255, 1)`,
                 zIndex: '0',

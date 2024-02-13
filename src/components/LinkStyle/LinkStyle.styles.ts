@@ -4,6 +4,7 @@ import { LinkStyleProps } from './LinkStyle.types'
 
 export const Link = styled(NavLink)<LinkStyleProps>`
     cursor: pointer;
+    font-family: "Inter";
     text-decoration: none;
     color: rgba(47, 84, 235, 1);
     display: flex;

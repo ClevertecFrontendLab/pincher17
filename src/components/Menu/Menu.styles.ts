@@ -20,4 +20,5 @@ export const LogoWrapper = styled('div')`
     justify-content: center;
     margin-top: 44px;
     margin-bottom: 67px;
+    height: 34px;
 `

@@ -54,7 +54,7 @@ export const ButtonMobileMenu = styled.div`
     rotate: 90deg;
     z-index: 10;
     background-color: transparent;
-    top: 61px;
+    top: 36px;
     left: 94px;
     width: 69px;
     height: 51px;

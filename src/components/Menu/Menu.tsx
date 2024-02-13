@@ -25,21 +25,25 @@ export const Menu: React.FC<MenuProps> = ({collapsed, setCollapsed}) => {
               key: '1',
               icon: <img src={calendar}/>,
               label: 'Календарь',
+              style: { height: '42px', marginBottom: '16px'},
             },
             {
               key: '2',
-              icon: <HeartFilled style={{ color: 'rgba(6, 17, 120, 1)'}} />,
+              icon: <HeartFilled style={{ color: 'rgba(6, 17, 120, 1)', height: '42px'}} />,
               label: 'Тренировки',
+              style: { height: '42px', marginBottom: '16px'},
             },
             {
               key: '3',
               icon: <TrophyFilled style={{ color: 'rgba(6, 17, 120, 1)'}} />,
               label: 'Достижения',
+              style: { height: '42px', marginBottom: '16px'},
             },
             {
                 key: '4',
                 icon: <IdcardOutlined style={{ color: 'rgba(6, 17, 120, 1)'}} />,
                 label: 'Профиль',
+                style: { height: '42px'},
               },
               {
                 key: '5',

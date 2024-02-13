@@ -15,11 +15,12 @@ export const Text = styled('p')`
     line-height: 18.2px;
     margin-top: 8px;
     margin-bottom: 0;
+    font-family: "Inter";
 `
 export const InnerWrapperTop = styled('div')`
     width: 100%;
     padding: 12px 24px;
-    padding: 12px 24px 0px 12px;
+    padding: 12px 24px 0px 24px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -38,6 +39,6 @@ export const Line = styled('div')`
 export const InnerWrapperBottom = styled('div')`
     display: flex;
     width: 100%;
-    padding: 12px 11px;
+    padding: 9px 5px;
     justify-content: space-around;
 `

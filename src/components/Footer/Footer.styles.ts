@@ -2,7 +2,8 @@ import { Link } from '@components/LinkStyle/LinkStyle.styles'
 import styled from 'styled-components'
 
 export const Footers = styled('div')`
-    margin-top: 265px;
+    margin-top: 189px;
+    margin-bottom: 18px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import './main-page.css';
 import { HeartFilled, IdcardOutlined } from '@ant-design/icons';
-import { Card, Layout } from 'antd';
-import { CardButtonWrapper, Text } from './MainPage.styles';
+import { Layout } from 'antd';
+import { CardButtonWrapper, CardStyle, Text } from './MainPage.styles';
 import calendar2 from '../../assets/icons/CalendarV2.svg';
 import background from '../../assets/img/MainPageLight.png';
 import { CardInfo } from '@components/CardInfo';
@@ -53,12 +53,12 @@ export const MainPage: React.FC = () => {
                             </Text>
                         </CardInfo>
 
-                        <CardInfo>
+                        <CardInfo marginBottom={'16px'}>
                             <Text
                                 fontSize='20px'
                                 lineheight='26px'
                                 fontWeight='500'
-                                maxWidth='650px'
+                                maxWidth='664px'
                             >
                                 CleverFit — это не просто приложение, а твой личный помощник в мире
                                 фитнеса. Не откладывай на завтра — начни тренироваться уже сегодня!
@@ -66,10 +66,10 @@ export const MainPage: React.FC = () => {
                         </CardInfo>
 
                         <CardButtonWrapper>
-                            <Card
+                            <CardStyle
                                 title='Расписать тренировки'
                                 bordered={false}
-                                style={{ width: '100%', marginRight: '25px' }}
+                                style={{ width: '100%', marginRight: '25px', fontFamily: "Inter", fontWeight: '400', lineHeight: '20.8px' }}
                             >
                                 <LinkStyle to='/' text='Тренировки' color='rgba(47, 84, 235, 1)'>
                                     <HeartFilled
@@ -79,22 +79,22 @@ export const MainPage: React.FC = () => {
                                         }}
                                     />
                                 </LinkStyle>
-                            </Card>
+                            </CardStyle>
 
-                            <Card
+                            <CardStyle
                                 title='Назначить календарь'
                                 bordered={false}
-                                style={{ width: '100%', marginRight: '25px' }}
+                                style={{ width: '100%', marginRight: '25px', fontFamily: "Inter", fontWeight: '400', lineHeight: '20.8px' }}
                             >
                                 <LinkStyle to='/' text='Календарь' color='rgba(47, 84, 235, 1)'>
                                     <img src={calendar2} style={{ marginRight: '8px' }} />
                                 </LinkStyle>
-                            </Card>
+                            </CardStyle>
 
-                            <Card
+                            <CardStyle
                                 title='Заполнить профиль'
                                 bordered={false}
-                                style={{ width: '100%' }}
+                                style={{ width: '100%', fontFamily: "Inter", fontWeight: '400', lineHeight: '20.8px' }}
                             >
                                 <LinkStyle to='/' text='Профиль' color='rgba(47, 84, 235, 1)'>
                                     <IdcardOutlined
@@ -104,7 +104,7 @@ export const MainPage: React.FC = () => {
                                         }}
                                     />
                                 </LinkStyle>
-                            </Card>
+                            </CardStyle>
                         </CardButtonWrapper>
                         <ButtonMenu
                             collapsed={collapsed}
