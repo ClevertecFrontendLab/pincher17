@@ -47,4 +47,9 @@ export const LinkPasswordRecovery = styled('div')<LinkPasswordRecoveryProps>`
 export const ButtonGoogle= styled(Button)`
     width: 100%;
     height: 40px;
+    @media screen and (max-width: 360px) {
+    & .anticon, .anticon-google-plus {
+        display: none;
+    }
+  }
 `

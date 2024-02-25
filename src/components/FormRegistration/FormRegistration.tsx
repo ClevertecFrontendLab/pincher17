@@ -121,7 +121,7 @@ export const FormRegistration: React.FC = () => {
       </ButtonForm>
     </Form.Item>
     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-      <ButtonGoogle icon={<GooglePlusOutlined />}>Войти через Google</ButtonGoogle>
+      <ButtonGoogle icon={<GooglePlusOutlined />}>Регистрация через Google</ButtonGoogle>
     </Form.Item>
   </FormStyle>
 );
