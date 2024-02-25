@@ -7,8 +7,16 @@ import logoCollapsed from '../../assets/icons/logo_collapse.svg'
 import calendar from '../../assets/icons/calendar_icon.svg'
 import exit from '../../assets/icons/Exit.svg'
 import { ButtonMenu } from '@components/ButtonMenu/ButtonMenu';
+import { useAppDispatch } from '@hooks/typed-react-redux-hooks';
+import { setAccessToken } from '@redux/userSlice';
 
 export const Menu: React.FC<MenuProps> = ({collapsed, setCollapsed}) => {
+    const dispatch = useAppDispatch()
+
+    const onExit = () => {
+        localStorage.removeItem('accessToken');
+        dispatch(setAccessToken(''));
+      };
     
     return (
         <Siders trigger={null} collapsible collapsed={collapsed} width={'208px'}>
@@ -53,6 +61,7 @@ export const Menu: React.FC<MenuProps> = ({collapsed, setCollapsed}) => {
                 boxShadow: `0px 1px 0px 0px rgba(240, 240, 240, 1) inset`,
                 transition: 'all 0.2s',},
                 label: 'Выход',
+                onClick: onExit
               },
           ]}
         >

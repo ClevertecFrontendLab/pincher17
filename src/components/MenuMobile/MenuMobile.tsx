@@ -4,8 +4,17 @@ import { LinkStyle } from '@components/LinkStyle';
 import logo from './logoMobile.svg';
 import { MenuMobileProps } from './MenuMobile.types';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { useAppDispatch } from '@hooks/typed-react-redux-hooks';
+import { setAccessToken } from '@redux/userSlice';
 
 export const MenuMobile: React.FC<MenuMobileProps> = ({ collapsed, onClick }) => {
+    const dispatch = useAppDispatch()
+
+    const onExit = () => {
+        localStorage.removeItem('accessToken');
+        dispatch(setAccessToken(''));
+      };
+
     return (
         <Menu collapsed={collapsed}>
             <ButtonMobileMenu
@@ -55,7 +64,7 @@ export const MenuMobile: React.FC<MenuMobileProps> = ({ collapsed, onClick }) =>
                     <LinkStyle to='/' text='Профиль' fontSize='14px' />
                 </div>
             </MenuContent>
-            <ExitWrapper>
+            <ExitWrapper onClick={onExit}>
                 <LinkStyle to='/' text='Выход' fontSize='14px' />
             </ExitWrapper>
         </Menu>
