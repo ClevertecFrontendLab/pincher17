@@ -47,3 +47,41 @@
     white-space: wrap;
     text-align: center;
   }
+
+  .ant-tabs > .ant-tabs-nav .ant-tabs-nav-list, .ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-list{
+    width: 100%;
+    }
+
+    .ant-tabs-tab.ant-tabs-tab-active.ant-tabs-tab-btn {
+      color: rgb(47,84,235);
+    }
+
+    .ant-tabs-ink-bar{
+      background: rgb(47,84,235);
+
+    }
+
+    .ant-checkbox-checked .ant-checkbox-inner {
+      background-color: rgb(47,84,235);
+      border-color: rgb(47,84,235);
+
+  }
+
+  .ant-input-group .ant-input{
+    height: 40px;
+  }
+
+  .ant-input-affix-wrapper{
+    height: 40px;
+  }
+
+  .ant-tabs-tab-btn{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Inter';
+    line-height: 20.8px;
+  }
+
+  .ant-form-item{
+    margin-bottom: 31px;
+  }

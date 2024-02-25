@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import 'antd/dist/antd.css';
 import './main-page.css';
 import { HeartFilled, IdcardOutlined } from '@ant-design/icons';
@@ -13,14 +13,37 @@ import { MenuMobile } from '@components/MenuMobile/MenuMobile';
 import { Menu } from '@components/Menu';
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
+import { push } from "redux-first-history";
+import { useAppDispatch, useAppSelector } from '@hooks/typed-react-redux-hooks';
+import { setAccessToken } from '@redux/userSlice';
+import Loader from '@components/Loader/Loader';
+
 
 const { Content } = Layout;
 
 export const MainPage: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
+    const accessToken = useAppSelector(state => state.user.accessToken);
+    const loading = useAppSelector(state => state.loading.isLoading);
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+      
+      if (!accessToken) {
+          const storedAccessToken = localStorage.getItem('accessToken');
+          if (storedAccessToken) { 
+              dispatch(setAccessToken(storedAccessToken));
+          } else {
+              
+              dispatch(push('/auth'));
+          }
+      }
+  }, [accessToken, dispatch]);  
 
     return (
         <>
+         {loading ? <Loader /> : ''}
+        <Suspense fallback={<Loader />}>
             <MenuMobile collapsed={collapsed} onClick={() => setCollapsed(!collapsed)} />
             <Layout style={{ maxWidth: '1440px', margin: '0 auto' }}>
                 <Menu collapsed={collapsed} setCollapsed={setCollapsed} />
@@ -114,6 +137,9 @@ export const MainPage: React.FC = () => {
                     </Content>
                 </Layout>
             </Layout>
+            </Suspense>
         </>
     );
 };
+
+/* export default MainPage */
