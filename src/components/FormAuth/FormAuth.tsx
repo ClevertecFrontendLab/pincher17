@@ -19,7 +19,7 @@ export const FormAuth: React.FC = () => {
   const [valueEmail, setValueEmail] = useState("");
   const [passwordRecoveryDisabled, setPasswordRecoveryDisabled] = useState(false)
   const [valuePassword, setValuePassword] = useState("");
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
   const dispatch = useAppDispatch()
   const codeSendOnEmail = useAppSelector(state => state.user.codeSendOnEmail);
   const checkEmailErrorCode = useAppSelector(state => state.user.checkEmailErrorCode);
@@ -38,6 +38,7 @@ export const FormAuth: React.FC = () => {
 
   const onChangeCheckbox: CheckboxProps['onChange'] = (e) => {
     setChecked(e.target.checked);
+    
   };
 
   const onPasswordRecovery = () => {
@@ -66,6 +67,11 @@ export const FormAuth: React.FC = () => {
       dispatch(push('/auth/confirm-email'));
     }
   }, [codeSendOnEmail, dispatch]);
+
+
+  const handleGoogleAuth = () => {
+    window.location.href = 'https://marathon-api.clevertec.ru/auth/google';
+  }
   
 
   return (
@@ -121,8 +127,6 @@ export const FormAuth: React.FC = () => {
 
     <WrapperCheckbox>
       <Form.Item<FieldType>
-        name="remember"
-        valuePropName="checked"
         wrapperCol={{ offset: 8, span: 16 }}
       >
         <Checkbox
@@ -146,7 +150,7 @@ export const FormAuth: React.FC = () => {
       </ButtonForm>
     </Form.Item>
     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-      <ButtonGoogle icon={<GooglePlusOutlined />}>Войти через Google</ButtonGoogle>
+      <ButtonGoogle icon={<GooglePlusOutlined />} onClick={handleGoogleAuth}>Войти через Google</ButtonGoogle>
     </Form.Item>
   </FormStyle>
 );

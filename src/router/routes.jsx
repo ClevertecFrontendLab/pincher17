@@ -1,3 +1,4 @@
+import { useAppDispatch } from "@hooks/typed-react-redux-hooks"
 import { Registration } from "@pages/Registration/Registration"
 import { Auth } from "@pages/auth/Auth"
 import { ChangePassword } from "@pages/change-password/change-password"
@@ -7,16 +8,28 @@ import { ErrorCheckEmailNoExist } from "@pages/error-check-email-no-exist/error-
 import { ErrorCheckEmail } from "@pages/error-check-email/error-check-email"
 import { ErrorLogin } from "@pages/error-login/error-login"
 import { ErrorUserExist } from "@pages/error-user-exist/error-user-exist"
+import { Feedbacks } from "@pages/feedbacks"
 import { MainPage } from "@pages/main-page"
 import { ResultError } from "@pages/result-error/result-error"
 import { SuccessChangePassword } from "@pages/success-change-password/success-change-password"
 import { SuccessRegistration } from "@pages/success-registration/success-registration"
-import { Navigate, Route, Routes } from "react-router-dom"
+import { useEffect } from "react"
+import { Navigate, Route, Routes, useSearchParams } from "react-router-dom"
 
 
 
 export const AppRoutes = () => {
     
+    const [searchParams] = useSearchParams();
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        const accessTokenQuery = searchParams.get('accessToken');
+        if (accessTokenQuery) {
+            localStorage.setItem('accessToken', accessTokenQuery);
+        }
+    }, [searchParams, dispatch]);  
+
 
     return (
     <>
@@ -24,6 +37,7 @@ export const AppRoutes = () => {
     <Routes>
         <Route path="/" element={<Navigate to="/main" />} />
         <Route path='/main' element={<MainPage/>} />
+        <Route path='/feedbacks' element={<Feedbacks/>} />
         <Route path='/auth' element={<Auth />} />
         <Route path='/auth/registration' element={<Registration />} />
         <Route path='/result/error-login' element={<ErrorLogin />} />
