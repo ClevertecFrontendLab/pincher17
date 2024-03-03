@@ -4,6 +4,7 @@ import { createReduxHistoryContext } from "redux-first-history";
 import { createBrowserHistory } from "history";
 import userSlice from "./userSlice";
 import LoaderSlice from "./LoaderSlice";
+import feedbacksSlice from "./feedbacksSlice";
 
 
 const {
@@ -17,6 +18,7 @@ const {
       router: routerReducer,
       user: userSlice,
       loading: LoaderSlice,
+      feedbacks: feedbacksSlice,
     }),
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(routerMiddleware),
   });

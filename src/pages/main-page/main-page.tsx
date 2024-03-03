@@ -17,6 +17,7 @@ import { push } from "redux-first-history";
 import { useAppDispatch, useAppSelector } from '@hooks/typed-react-redux-hooks';
 import { setAccessToken } from '@redux/userSlice';
 import Loader from '@components/Loader/Loader';
+import { useSearchParams } from 'react-router-dom';
 
 
 const { Content } = Layout;
@@ -26,9 +27,9 @@ export const MainPage: React.FC = () => {
     const accessToken = useAppSelector(state => state.user.accessToken);
     const loading = useAppSelector(state => state.loading.isLoading);
     const dispatch = useAppDispatch()
+    const [searchParams] = useSearchParams();
 
     useEffect(() => {
-      
       if (!accessToken) {
           const storedAccessToken = localStorage.getItem('accessToken');
           if (storedAccessToken) { 
@@ -38,7 +39,9 @@ export const MainPage: React.FC = () => {
               dispatch(push('/auth'));
           }
       }
-  }, [accessToken, dispatch]);  
+  }, [accessToken, searchParams, dispatch]);  
+
+
 
     return (
         <>

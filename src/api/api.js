@@ -10,6 +10,17 @@ export const instance = axios.create({
 
 })
 
+const accessToken = localStorage.getItem('accessToken');
+
+
+if (!accessToken) {
+
+    console.error('Access token not found in localStorage');
+} else {
+
+    /* instance.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`; */
+}
+
 const config = {
     withCredentials: true
 };
@@ -53,6 +64,36 @@ export const userApi = {
     },
     changePassword(password, confirmPassword) {
         return instance.post(`auth/change-password`, { password, confirmPassword }, config)
+            .then(response => {
+                return response.data; 
+            })
+            .catch(error => {
+                throw error; 
+            });
+    },
+    getFeedback(accessToken) {
+        const config = {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        };
+    
+        return instance.get('/feedback', config)
+            .then(response => {
+                return response.data; 
+            })
+            .catch(error => {
+                throw error; 
+            });
+    },
+    sendFeedback(accessToken, message, rating) {
+        const config = {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        };
+    
+        return instance.post('/feedback', {message, rating}, config)
             .then(response => {
                 return response.data; 
             })
