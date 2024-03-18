@@ -1,6 +1,7 @@
 import { useAppDispatch } from "@hooks/typed-react-redux-hooks"
 import { Registration } from "@pages/Registration/Registration"
 import { Auth } from "@pages/auth/Auth"
+import { Calendar } from "@pages/calendar"
 import { ChangePassword } from "@pages/change-password/change-password"
 import { ConfirmEmail } from "@pages/confirm-email/confirm-email"
 import { ErrorChangePassword } from "@pages/error-change-password/error-change-password"
@@ -50,6 +51,7 @@ export const AppRoutes = () => {
         <Route path='/auth/change-password' element={<ChangePassword />} />
         <Route path='/result/success-change-password' element={<SuccessChangePassword />} />
         <Route path='/result/error-change-password' element={<ErrorChangePassword />} />
+        <Route path='/calendar' element={<Calendar />} />
     </Routes>
     </>
     )

@@ -5,6 +5,7 @@ import { createBrowserHistory } from "history";
 import userSlice from "./userSlice";
 import LoaderSlice from "./LoaderSlice";
 import feedbacksSlice from "./feedbacksSlice";
+import trainingSlice from "./trainingSlice";
 
 
 const {
@@ -19,6 +20,7 @@ const {
       user: userSlice,
       loading: LoaderSlice,
       feedbacks: feedbacksSlice,
+      trainings: trainingSlice,
     }),
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(routerMiddleware),
   });

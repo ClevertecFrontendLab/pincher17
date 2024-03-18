@@ -101,4 +101,67 @@ export const userApi = {
                 throw error; 
             });
     },
+
+    getTrainings(accessToken) {
+        const config = {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        };
+    
+        return instance.get('/training', config)
+            .then(response => {
+                return response.data; 
+            })
+            .catch(error => {
+                throw error; 
+            });
+    },
+
+    createTrainings(accessToken, training) {
+        const config = {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        };
+    
+        return instance.post('/training', training, config)
+            .then(response => {
+                return response.data; 
+            })
+            .catch(error => {
+                throw error; 
+            });
+    },
+    changeTrainings(accessToken, trainingId, training) {
+        const config = {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        };
+    
+        return instance.put(`/training/${trainingId}`, training, config)
+            .then(response => {
+                return response.data; 
+            })
+            .catch(error => {
+                throw error; 
+            });
+    },
+
+    trainingList(accessToken) {
+        const config = {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        };
+    
+        return instance.get(`/catalogs/training-list`, config)
+            .then(response => {
+                return response.data; 
+            })
+            .catch(error => {
+                throw error; 
+            });
+    },
 };
