@@ -16,6 +16,7 @@ import { SuccessChangePassword } from '@pages/success-change-password/success-ch
 import { SuccessRegistration } from '@pages/success-registration/success-registration';
 import { useEffect } from 'react';
 import { Navigate, Route, Routes, useSearchParams } from 'react-router-dom';
+import { ROUTES } from './paths';
 
 export const AppRoutes = () => {
     const [searchParams] = useSearchParams();
@@ -31,25 +32,25 @@ export const AppRoutes = () => {
     return (
         <>
             <Routes>
-                <Route path='/' element={<Navigate to='/main' />} />
-                <Route path='/main' element={<MainPage />} />
-                <Route path='/feedbacks' element={<Feedbacks />} />
-                <Route path='/auth' element={<Auth />} />
-                <Route path='/auth/registration' element={<Registration />} />
-                <Route path='/result/error-login' element={<ErrorLogin />} />
-                <Route path='/result/success' element={<SuccessRegistration />} />
-                <Route path='/result/error-user-exist' element={<ErrorUserExist />} />
-                <Route path='/result/error' element={<ResultError />} />
-                <Route path='/auth/confirm-email' element={<ConfirmEmail />} />
+                <Route path='/' element={<Navigate to={ROUTES.MAIN} />} />
+                <Route path={ROUTES.MAIN} element={<MainPage />} />
+                <Route path={ROUTES.FEEDBACKS} element={<Feedbacks />} />
+                <Route path={ROUTES.AUTH} element={<Auth />} />
+                <Route path={ROUTES.REGISTRATION} element={<Registration />} />
+                <Route path={ROUTES.ERROR_LOGIN} element={<ErrorLogin />} />
+                <Route path={ROUTES.SUCCESS_REGISTRATION} element={<SuccessRegistration />} />
+                <Route path={ROUTES.ERROR_USER_EXIST} element={<ErrorUserExist />} />
+                <Route path={ROUTES.RESULT_ERROR} element={<ResultError />} />
+                <Route path={ROUTES.CONFIRM_EMAIL} element={<ConfirmEmail />} />
                 <Route
-                    path='/result/error-check-email-no-exist'
+                    path={ROUTES.ERROR_CHECK_EMAIL_NO_EXIST}
                     element={<ErrorCheckEmailNoExist />}
                 />
-                <Route path='/result/error-check-email' element={<ErrorCheckEmail />} />
-                <Route path='/auth/change-password' element={<ChangePassword />} />
-                <Route path='/result/success-change-password' element={<SuccessChangePassword />} />
-                <Route path='/result/error-change-password' element={<ErrorChangePassword />} />
-                <Route path='/calendar' element={<Calendar />} />
+                <Route path={ROUTES.ERROR_CHECK_EMAIL} element={<ErrorCheckEmail />} />
+                <Route path={ROUTES.CHANGE_PASSWORD} element={<ChangePassword />} />
+                <Route path={ROUTES.SUCCESS_CHANGE_PASSWORD} element={<SuccessChangePassword />} />
+                <Route path={ROUTES.ERROR_CHANGE_PASSWORD} element={<ErrorChangePassword />} />
+                <Route path={ROUTES.CALENDAR} element={<Calendar />} />
             </Routes>
         </>
     );
