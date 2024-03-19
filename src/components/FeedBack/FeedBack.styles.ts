@@ -33,7 +33,7 @@ export const WrapperAvatar = styled('div')`
 
 export const Avatar = styled('img')`
     width: 42px;
-
+    border-radius: 30px;
 `
 
 export const PersonNameWrapper = styled('div')`

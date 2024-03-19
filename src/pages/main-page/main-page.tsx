@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useState } from 'react';
 import 'antd/dist/antd.css';
 import './main-page.css';
 import { HeartFilled, IdcardOutlined } from '@ant-design/icons';
-import { Layout } from 'antd';
+import { Button, Layout } from 'antd';
 import { CardButtonWrapper, CardStyle, Text } from './MainPage.styles';
 import calendar2 from '../../assets/icons/CalendarV2.svg';
 import background from '../../assets/img/MainPageLight.png';
@@ -18,6 +18,9 @@ import { useAppDispatch, useAppSelector } from '@hooks/typed-react-redux-hooks';
 import { setAccessToken } from '@redux/userSlice';
 import Loader from '@components/Loader/Loader';
 import { useSearchParams } from 'react-router-dom';
+import { ErrorCalendarAllTrainings } from '@components/ErrorCalendarAllTrainings/ErrorCalendarAllTrainings';
+import { getTrainingThunk } from '@redux/trainingSlice';
+import { ButtonLink } from '@pages/feedbacks/feedbacks.styles';
 
 
 const { Content } = Layout;
@@ -28,6 +31,11 @@ export const MainPage: React.FC = () => {
     const loading = useAppSelector(state => state.loading.isLoading);
     const dispatch = useAppDispatch()
     const [searchParams] = useSearchParams();
+
+
+    const getTrainings = () => {
+        dispatch(getTrainingThunk(accessToken));
+      };
 
     useEffect(() => {
       if (!accessToken) {
@@ -47,6 +55,7 @@ export const MainPage: React.FC = () => {
         <>
          {loading ? <Loader /> : ''}
         <Suspense fallback={<Loader />}>
+            <ErrorCalendarAllTrainings></ErrorCalendarAllTrainings>
             <MenuMobile collapsed={collapsed} onClick={() => setCollapsed(!collapsed)} />
             <Layout style={{ maxWidth: '1440px', margin: '0 auto' }}>
                 <Menu collapsed={collapsed} setCollapsed={setCollapsed} />
@@ -97,14 +106,15 @@ export const MainPage: React.FC = () => {
                                 bordered={false}
                                 style={{ width: '100%', marginRight: '25px', fontFamily: "Inter", fontWeight: '400', lineHeight: '20.8px' }}
                             >
-                                <LinkStyle to='/' text='Тренировки' color='rgba(47, 84, 235, 1)'>
-                                    <HeartFilled
+                                <Button  style={{ width: '100%', color: 'rgba(47, 84, 235, 1)'}} type='link' onClick={getTrainings}>
+                                <HeartFilled
                                         style={{
                                             color: 'rgba(47, 84, 235, 1)',
                                             marginRight: '8px',
                                         }}
                                     />
-                                </LinkStyle>
+                                    Тренировки
+                                </Button>
                             </CardStyle>
 
                             <CardStyle
@@ -112,9 +122,10 @@ export const MainPage: React.FC = () => {
                                 bordered={false}
                                 style={{ width: '100%', marginRight: '25px', fontFamily: "Inter", fontWeight: '400', lineHeight: '20.8px' }}
                             >
-                                <LinkStyle to='/' text='Календарь' color='rgba(47, 84, 235, 1)'>
+                                <Button  style={{ width: '100%', color: 'rgba(47, 84, 235, 1)'}} type='link' onClick={getTrainings}>
                                     <img src={calendar2} style={{ marginRight: '8px' }} />
-                                </LinkStyle>
+                                    Календарь
+                                </Button>
                             </CardStyle>
 
                             <CardStyle
@@ -122,14 +133,15 @@ export const MainPage: React.FC = () => {
                                 bordered={false}
                                 style={{ width: '100%', fontFamily: "Inter", fontWeight: '400', lineHeight: '20.8px' }}
                             >
-                                <LinkStyle to='/' text='Профиль' color='rgba(47, 84, 235, 1)'>
-                                    <IdcardOutlined
-                                        style={{
-                                            color: 'rgba(47, 84, 235, 1)',
-                                            marginRight: '8px',
-                                        }}
-                                    />
-                                </LinkStyle>
+                                <Button  style={{ width: '100%', color: 'rgba(47, 84, 235, 1)'}} type='link' onClick={getTrainings}>
+                                        <IdcardOutlined
+                                                style={{
+                                                    color: 'rgba(47, 84, 235, 1)',
+                                                    marginRight: '8px',
+                                                }}
+                                            />
+                                    Профиль
+                                </Button>
                             </CardStyle>
                         </CardButtonWrapper>
                         <ButtonMenu

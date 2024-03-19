@@ -7,16 +7,24 @@ import logoCollapsed from '../../assets/icons/logo_collapse.svg'
 import calendar from '../../assets/icons/calendar_icon.svg'
 import exit from '../../assets/icons/Exit.svg'
 import { ButtonMenu } from '@components/ButtonMenu/ButtonMenu';
-import { useAppDispatch } from '@hooks/typed-react-redux-hooks';
+import { useAppDispatch, useAppSelector } from '@hooks/typed-react-redux-hooks';
 import { setAccessToken } from '@redux/userSlice';
+import { getTrainingThunk } from '@redux/trainingSlice';
+
+
 
 export const Menu: React.FC<MenuProps> = ({collapsed, setCollapsed}) => {
     const dispatch = useAppDispatch()
+    const accessToken = useAppSelector((state) => state.user.accessToken);
 
     const onExit = () => {
         localStorage.removeItem('accessToken');
         dispatch(setAccessToken(''));
       };
+      const getTrainings = () => {
+        dispatch(getTrainingThunk(accessToken));
+      };
+      
     
     return (
         <Siders trigger={null} collapsible collapsed={collapsed} width={'208px'}>
@@ -28,12 +36,15 @@ export const Menu: React.FC<MenuProps> = ({collapsed, setCollapsed}) => {
           theme="light"
           mode="inline"
           defaultSelectedKeys={['1']}
+          
           items={[
             {
+              onClick: getTrainings,
               key: '1',
               icon: <img src={calendar}/>,
-              label: 'Календарь',
+              label: <span data-test-id='menu-button-calendar' >Календарь</span>,
               style: { height: '42px', marginBottom: '16px'},
+              
             },
             {
               key: '2',
