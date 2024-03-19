@@ -125,7 +125,6 @@ const token = accessToken
         userApi.changeTrainings(accessToken, trainingId, training).then((response: any) => {
            dispatch(getTrainingThunk(token))
           dispatch(setSuccessTrainingAdd(true))
-           console.log('success changeTrainings')
         })
         .catch(error => {
             dispatch(setErrorTrainingsSave(true))

@@ -13,10 +13,9 @@ import { useSearchParams } from 'react-router-dom';
 
 import { HeaderCalendar } from '@components/HeaderCalendar';
 import { CalendarExercises } from '@components/CalendarExercises';
-import { getTrainingListThunk, getTrainingThunk } from '@redux/trainingSlice';
+import { getTrainingListThunk } from '@redux/trainingSlice';
 import { ErrorCalendarListTrainings } from '@components/ErrorCalendarListTrainings/ErrorCalendarListTrainings';
 import { ErrorCalendarSaveTrainings } from '@components/ErrorCalendarSaveTrainings/ErrorCalendarSaveTrainings';
-
 
 const { Content } = Layout;
 
@@ -40,13 +39,9 @@ export const Calendar: React.FC = () => {
 
     useEffect(() => {
         if (accessToken) {
-            
             dispatch(getTrainingListThunk(accessToken));
         }
     }, [dispatch, accessToken]);
-
-
-
 
     return (
         <>
@@ -69,7 +64,6 @@ export const Calendar: React.FC = () => {
                             justifyContent: 'center',
                         }}
                     >
-
                         <CalendarExercises />
                         <ButtonMenu
                             collapsed={collapsed}

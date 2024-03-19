@@ -1,13 +1,10 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-
-export const WrapperSidePanel = styled('div')`
-
-`
+export const WrapperSidePanel = styled('div')``;
 export const ExerciseDateWrapper = styled('div')`
     display: flex;
     justify-content: space-between;
-`
+`;
 
 export const ExerciseTitle = styled('span')`
     font-family: 'Inter';
@@ -15,7 +12,7 @@ export const ExerciseTitle = styled('span')`
     font-weight: 500;
     line-height: 18.2px;
     color: rgba(140, 140, 140, 1);
-`
+`;
 
 export const Date = styled('span')`
     font-family: 'Inter';
@@ -23,29 +20,27 @@ export const Date = styled('span')`
     font-weight: 500;
     line-height: 18.2px;
     color: rgba(140, 140, 140, 1);
-`
+`;
 
 export const WrapperCreateExercise = styled('div')`
     padding-top: 24px;
-`
+`;
 
 export const WrapperSettingsExercise = styled('div')`
     display: flex;
     justify-content: space-between;
     padding-top: 8px;
-`
+`;
 export const CountSets = styled('div')`
     width: 120px;
-`
+`;
 
 export const WeightAndCount = styled('div')`
-     display: flex;
-     margin-bottom: 24px;
-`
+    display: flex;
+    margin-bottom: 24px;
+`;
 
-export const Count = styled('div')`
-    
-`
+export const Count = styled('div')``;
 export const NameSettings = styled('div')`
     font-family: 'Inter';
     font-size: 12px;
@@ -54,7 +49,7 @@ export const NameSettings = styled('div')`
     color: rgba(38, 38, 38, 1);
     background-color: rgba(240, 240, 240, 1);
     padding: 8px;
-`
+`;
 
 export const Xicon = styled('div')`
     position: relative;
@@ -62,7 +57,7 @@ export const Xicon = styled('div')`
     right: 8px;
     font-size: 14px;
     color: rgba(191, 191, 191, 1);
-`
+`;
 export const WrapperButton = styled('div')`
     width: 100%;
     background-color: rgba(240, 240, 240, 1);
@@ -70,4 +65,4 @@ export const WrapperButton = styled('div')`
     display: flex;
     align-items: center;
     justify-content: space-between;
-`
+`;

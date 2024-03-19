@@ -1,32 +1,28 @@
-import { Line } from '@components/CardDownload/CardDownload.styles'
-import { ButtonFeedback } from '@pages/feedbacks/feedbacks.styles'
-import { Button, Popover } from 'antd'
-import styled from 'styled-components'
-
-
+import { Line } from '@components/CardDownload/CardDownload.styles';
+import { ButtonFeedback } from '@pages/feedbacks/feedbacks.styles';
+import { Button, Popover } from 'antd';
+import styled from 'styled-components';
 
 export const ModalCreateExercise = styled('div')`
-margin-left: 64px;
-`
+    margin-left: 64px;
+`;
 
 export const PopoverStyled = styled(Popover)`
-padding: 0;
-   & .ant-popover-content {
-    top: -50px !important;
-    left: 61px !important;
-}
-`
+    padding: 0;
+    & .ant-popover-content {
+        top: -50px !important;
+        left: 61px !important;
+    }
+`;
 
 export const TitlePopover = styled('p')`
     font-family: 'Inter';
     font-weight: 700;
     font-size: 14px;
     line-height: 18.2px;
-`
+`;
 
-export const WrapperPopover = styled('div')`
-
-`
+export const WrapperPopover = styled('div')``;
 
 export const WrapperContentPopover = styled('div')`
     display: flex;
@@ -36,11 +32,9 @@ export const WrapperContentPopover = styled('div')`
     @media screen and (max-width: 400px) {
         width: 80vw;
     }
-`
+`;
 
 export const WrapperButtonPopover = styled('div')`
-    /* position: absolute;
-    bottom: 12px; */
     width: 100%;
     @media screen and (max-width: 400px) {
         width: 100%;
@@ -48,15 +42,14 @@ export const WrapperButtonPopover = styled('div')`
         padding-right: 12px;
         left: 0;
     }
-    
-`
+`;
 
 export const ButtonCreateExercise = styled(ButtonFeedback)`
     width: 240px;
     @media screen and (max-width: 400px) {
         width: 100%;
     }
-`
+`;
 
 export const LineExercise = styled(Line)`
     left: -12px;
@@ -65,34 +58,32 @@ export const LineExercise = styled(Line)`
     top: -10px;
     @media screen and (max-width: 400px) {
         position: 'relative';
-       left: -24px;
-       width: 117%;
+        left: -24px;
+        width: 117%;
     }
-`
+`;
 
 export const LineExercise2 = styled(LineExercise)`
-
     @media screen and (max-width: 400px) {
-       width: 116%;
+        width: 116%;
     }
-`
-
+`;
 
 export const LineTopExercise = styled(Line)`
     left: 0px;
     width: 264px;
     @media screen and (max-width: 400px) {
-       left: 0;
-       width: 100%;
+        left: 0;
+        width: 100%;
     }
-`
+`;
 
 export const ButtonAddExercise = styled(Button)`
     width: 240px;
     @media screen and (max-width: 400px) {
         width: 100%;
     }
-`
+`;
 
 export const WrapperSelectPopover = styled('div')`
     display: flex;
@@ -100,4 +91,4 @@ export const WrapperSelectPopover = styled('div')`
     @media screen and (max-width: 400px) {
         width: 100%;
     }
-`
+`;

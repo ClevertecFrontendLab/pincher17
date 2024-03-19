@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from "react"
-import { Exercise } from "./SidePanel"
 
 export interface SidePanelProps {
   setOpenDrawer: Dispatch<SetStateAction<boolean>>

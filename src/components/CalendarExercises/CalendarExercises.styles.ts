@@ -1,10 +1,10 @@
-import styled from 'styled-components'
-import { ExerciseNameTitleProps } from './CalendarExercises.types'
+import styled from 'styled-components';
+import { ExerciseNameTitleProps } from './CalendarExercises.types';
 
 export const WrapperExercises = styled('div')`
     margin-top: 20px;
     min-height: 100px;
-`
+`;
 
 export const ExerciseName = styled('div')`
     display: flex;
@@ -16,57 +16,56 @@ export const ExerciseName = styled('div')`
     font-weight: 400;
     line-height: 18.2px;
     color: rgba(140, 140, 140, 1);
-`
+`;
 
 export const ExerciseNameTitle = styled(ExerciseName)<ExerciseNameTitleProps>`
     color: black;
     color: ${(props) => (props.disabled ? `rgba(140, 140, 140, 1)` : `black`)};
-`
+`;
 
 export const EmptyExercise = styled('div')`
-   text-align: center;
+    text-align: center;
     height: 100%;
     padding-top: 10%;
-`
+`;
 
 export const WrapperMobileCalendar = styled('div')`
     display: none;
     @media screen and (max-width: 400px) {
-    display: block;
-  }
-`
+        display: block;
+    }
+`;
 
 export const WrapperCalendar = styled('div')`
     display: block;
     @media screen and (max-width: 400px) {
-    display: none;
-  }
-`
+        display: none;
+    }
+`;
 
 export const WrapperDateCell = styled('div')`
     position: fixed;
     width: 100vw;
     left: 0%;
-`
+`;
 
 export const WrapperAllCalendar = styled('div')`
-       @media screen and (max-width: 400px) {
-            height: 100vh;
-        }
-`
+    @media screen and (max-width: 400px) {
+        height: 100vh;
+    }
+`;
 
 export const DateCellWithTrainings = styled('div')`
-   background: rgb(190 205 237);
+    background: rgb(190 205 237);
     position: relative;
     width: 100%;
     height: 22px;
     top: -23px;
     z-index: -1;
-`
+`;
 
 export const WrapperPopover = styled('div')`
-
-       @media screen and (max-width: 400px) {
-            height: 100vh;
-        }
-`
+    @media screen and (max-width: 400px) {
+        height: 100vh;
+    }
+`;
